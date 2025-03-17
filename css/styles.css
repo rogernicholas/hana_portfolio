@@ -1,8 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    background-color: #FFFDE7;
 }
 
 .header {
@@ -13,13 +11,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 4rem;
     font-weight: bold;
+    font-family: "Fugaz One", cursive;
+    color: #943939;
 }
 
 .nav-links {
@@ -37,27 +37,37 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
+    font-size: 2rem;
 }
-
+.container{
+    max-width: 1200px;
+    align-items: center;
+}
 .image-section {
     text-align: center;
     padding: 40px 0;
 }
 
 .image-section img {
-    max-width: 100%;
+    max-width: 30%;
     height: auto;
 }
 
 .about, .references, .courses {
-    max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
+}
+@media (max-width: 768px) {
+    .navbar {
+
+    }
+    .about , .references, .courses {
+        width: 100%;
+    }
 }
 
 h2 {
-    color: #444;
+    color: #943939;
+    font-size: 3rem;
+    font-family: "montserrat", sans-serif;
 }
