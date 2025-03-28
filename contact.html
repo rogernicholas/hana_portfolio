@@ -3,37 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hana Nicholas</title>
+    <title>Hana Nicholas - Kontakt</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
-            <h1 class="logo">Hana Nicholas</h1>
+            <h1 class="logo"><a href="index.html">Hana Nicholas</a></h1>
+            <button class="hamburger" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="index.html">Domů</a></li>
-                <li><a href="#">Reference</a></li>
-                <li><a href="#">Kurzy</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="index.html#reference">Reference</a></li>
+                <li><a href="index.html#kurzy">Kurzy</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="https://calendly.com/hananicholas-info/30min?month=2025-03">Rezervace</a></li>
             </ul>
         </nav>
     </header>
-    
-    <section class="contact-form">
-        <textarea placeholder="Vaše zpráva..."></textarea>
-        <button type="submit">Odeslat</button>
-    </section>
-    
-    <section class="contact-info">
-        <h2>Kontakt</h2>
-        <p>Email: example@email.com</p>
-        <p>Instagram: @placeholder</p>
-        <p>LinkedIn: linkedin.com/in/placeholder</p>
-    </section>
+
+    <div class="container">
+        <section class="contact-section">
+            <h2>Kontakt</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Kontaktní údaje</h3>
+                    <p><i class="fas fa-envelope"></i> Email: info@hananicholas.com</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Napište mi</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Jméno</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Zpráva</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Odeslat</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>made by <a href="https://www.instagram.com/rozero_n/" target="_blank" rel="noopener noreferrer">Roger Nicholas</a></p>
+    </footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

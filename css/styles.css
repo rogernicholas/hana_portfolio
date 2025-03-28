@@ -1,10 +1,102 @@
-body {
-    font-family: "Lato", sans-serif;
-    background-color: #FFFDE7;
+/* Base Styles */
+:root {
+    /* Colors */
+    --color-primary: #943939;
+    --color-primary-dark: #7a2d2d;
+    --color-background: #f3ebce;
+    --color-text: #333;
+    --color-white: #ffffff;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-shadow-hover: rgba(0, 0, 0, 0.15);
+
+    /* Fonts */
+    --font-primary: "Lato", sans-serif;
+    --font-heading: "montserrat", sans-serif;
+    --font-logo: "Fugaz One", cursive;
+
+    /* Font Sizes */
+    --font-size-xs: 0.9rem;    /* Mobile table cells */
+    --font-size-base: 1.1rem;  /* Body text, buttons, form inputs */
+    --font-size-lg: 1.2rem;    /* Mobile headings */
+    --font-size-xl: 1.8rem;    /* Testimonials, mobile headings */
+    --font-size-2xl: 2rem;     /* Navigation, course headings */
+    --font-size-3xl: 3rem;     /* Main section headings */
+    --font-size-4xl: 4rem;     /* Logo */
+
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    --spacing-2xl: 40px;
+    --spacing-3xl: 60px;
+
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 10px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 5px var(--color-shadow);
+    --shadow-md: 0 4px 8px var(--color-shadow);
+    --shadow-lg: 0 6px 12px var(--color-shadow-hover);
+
+    /* Transitions */
+    --transition-base: all 0.3s ease;
 }
 
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+}
+
+/* Typography */
+
+h1{
+    color: var(--color-primary);
+    font-size: var(--font-size-3xl);
+    font-family: var(--font-heading);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size: var(--font-size-3xl);
+    font-family: var(--font-heading);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+h3 {
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-lg);
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Header & Navigation */
 .header {
-    padding: 20px;
+    padding: var(--spacing-lg);
 }
 
 .navbar {
@@ -16,82 +108,222 @@ body {
 }
 
 .logo {
-    font-size: 4rem;
+    font-size: var(--font-size-4xl);
     font-weight: bold;
-    font-family: "Fugaz One", cursive;
-    color: #943939;
+    font-family: var(--font-logo);
+    color: var(--color-primary);
 }
 
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+ul li {
+    position: relative;
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-size: var(--font-size-xl);
+}
+
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     padding: 0;
     margin: 0;
 }
 
 .nav-links li {
-    display: inline;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.nav-links li::before {
+    display: none;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #943939;
-    font-size: 2rem;
-    font-family: "montserrat", sans-serif;
-}
-.container{
-    max-width: 1200px;
-    align-items: center;
-}
-.image-section {
-    text-align: center;
-    padding: 40px 0;
+    color: var(--color-primary);
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-heading);
 }
 
-.image-section img {
-    max-width: 30%;
-    height: auto;
+/* Buttons */
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-family: var(--font-heading);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
 }
 
+button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Sections */
 .about, .references, .courses {
-    margin: 40px auto;
-    padding: 20px;
-}
-@media (max-width: 768px) {
-    .navbar {
-
-    }
-    .about , .references, .courses {
-        width: 100%;
-    }
+    margin: var(--spacing-3xl) auto;
+    padding: var(--spacing-lg);
 }
 
-h2 {
-    color: #943939;
-    font-size: 3rem;
-    font-family: "montserrat", sans-serif;
+/* About Section */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
 }
 
+.about-text {
+    padding-right: var(--spacing-lg);
+}
+
+.about-image {
+    position: sticky;
+    top: var(--spacing-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* References Section */
+.testimonial {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+    transition: var(--transition-base);
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+/* Courses Section */
+.courses table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.courses th, .courses td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.courses th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.courses tr:last-child td {
+    border-bottom: none;
+}
+
+.courses tr:hover {
+    background-color: #f9f9f9;
+}
+
+.courses td:first-child {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Contact Form */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
 .footer {
     text-align: left;
-    padding: 20px;
-    color: #943939;
+    padding: var(--spacing-lg);
+    color: var(--color-primary);
 }
 
 .footer a {
-    color: #943939;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
-/* Hamburger Menu Styles */
+/* Hamburger Menu */
 .hamburger {
     display: none;
-    background: none;
+    background: none !important;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
     z-index: 100;
+    box-shadow: none;
+}
+
+.hamburger:hover {
+    background: none !important;
+    transform: none;
+    box-shadow: none;
 }
 
 .bar {
@@ -103,7 +335,7 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-/* Mobile Navigation */
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
     .hamburger {
         display: block;
@@ -137,5 +369,36 @@ h2 {
 
     .nav-links.active {
         left: 0;
+    }
+
+    .about, .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-text {
+        padding-right: 0;
+    }
+    
+    .about-image {
+        position: static;
+        margin-top: var(--spacing-xl);
+    }
+
+    .courses table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h2 {
+        font-size: var(--font-size-2xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .testimonial {
+        padding: var(--spacing-lg);
     }
 }
