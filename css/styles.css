@@ -199,10 +199,27 @@ button:hover {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
     align-items: start;
+    padding: var(--spacing-2xl);
 }
 
 .about-text {
     padding-right: var(--spacing-lg);
+}
+
+.about-text h2 {
+    text-align: left;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-primary);
+}
+
+.about-text h3 {
+    margin: var(--spacing-2xl) 0 var(--spacing-lg);
+    color: var(--color-primary);
+}
+
+.about-text p {
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
 }
 
 .about-image {
@@ -215,6 +232,12 @@ button:hover {
     height: auto;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
 }
 
 /* References Section */
@@ -232,6 +255,23 @@ button:hover {
 }
 
 /* Courses Section */
+.courses ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.courses ul li {
+    padding-left: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.courses ul li::before {
+    display: none;
+}
+
+.courses-text ul{
+    padding-bottom: var(--spacing-lg);
+}
 .courses table {
     width: 100%;
     border-collapse: collapse;
