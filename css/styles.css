@@ -241,6 +241,11 @@ button:hover {
 }
 
 /* References Section */
+.references {
+    margin: var(--spacing-3xl) auto;
+    padding: var(--spacing-lg);
+}
+
 .testimonial {
     background-color: var(--color-white);
     padding: var(--spacing-xl);
@@ -252,6 +257,26 @@ button:hover {
 
 .testimonial:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial h3 {
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-heading);
+}
+
+.testimonial p {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.testimonial p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
 }
 
 /* Courses Section */
@@ -440,5 +465,13 @@ button:hover {
 
     .testimonial {
         padding: var(--spacing-lg);
+    }
+    
+    .testimonial h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .testimonial p {
+        font-size: var(--font-size-base);
     }
 }
